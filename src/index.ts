@@ -1,4 +1,5 @@
 import {CallbackService, VK} from "vk-io";
+import {resolve} from "path";
 import {
   DirectAuthorization,
   officialAppCredentials,
@@ -84,7 +85,7 @@ cliApp
     );
 
     const path = `${chatId}_base.scv`;
-    writeFileSync(path, fileData);
+    writeFileSync(resolve(process.cwd() + "/" + path), fileData);
     console.log(`members count: ${list.length}`);
     console.log(`save file ${path}`);
   });
